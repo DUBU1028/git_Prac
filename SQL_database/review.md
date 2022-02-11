@@ -38,8 +38,12 @@ SQL = structured query language - 하나의 컴퓨터 언어
 9. order by "칼럼이름" "정렬조건" = 특정 칼럼을 특정 정렬조건으로 정렬시킴
 10. limit "갯수" = 트랜잭션될 항목의 최대갯수를 제한함
 11. delete from "table 이름" where "칼럼이름 = '특정행'"; = 특정행을 제거함
+12. alter table "table 이름" rename "바꿀 table 이름" = table이름을 바꿈
+13. alter table "table 이름" change "원래 칼럼이름" "바꿀 칼럼이름" "바꿀 칼럼의 type"; = 칼럼 이름 및 타입변경
+14. select "보여질 칼럼들" from "선행 table" left join "후행 table" on "두 table의 join 기준"; = 두 table이 하나로 결합되어 필요한 칼럼들을 보여줌
 
 ### MySQL 주의사항
 1. where은 from 다음에 쓸것
 2. delete 및 update시 where을 붙여주어야 한다. 그렇지 않으면table내 모든 항목들이 update되거나 delete된다. 매우중요!!!
 3. order by 다음에 limit을 쓸것
+4. 두 table join 및 select시 같은 이름의 칼럼이 있다면 꼭 앞에 "table이름.칼럼이름"이라고 정확히 명시해야 한다.
